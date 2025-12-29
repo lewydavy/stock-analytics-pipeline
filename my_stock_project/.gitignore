@@ -1,0 +1,20 @@
+# Python / Venv
+venv/
+__pycache__/
+*.pyc
+
+# dbt specific
+dbt_packages/
+target/
+logs/
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Dagster
+.dagster/

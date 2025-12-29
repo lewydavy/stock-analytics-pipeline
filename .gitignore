@@ -1,0 +1,22 @@
+# --- Python Environment (Critical) ---
+venv/
+__pycache__/
+*.pyc
+.env
+
+# --- dbt ---
+target/
+dbt_packages/
+logs/
+
+# --- Dagster ---
+.dagster/
+dagster_home/
+
+# --- IDEs ---
+.vscode/
+.idea/
+
+# --- OS Misc ---
+.DS_Store
+Thumbs.db

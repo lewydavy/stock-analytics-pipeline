@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_stock_prices
+    description: "Union of all raw stock tables with standardized column names."
+    columns:
+      - name: symbol
+        description: "The ticker symbol (e.g., AAPL)."
+        tests:
+          - not_null
+      - name: trading_date
+        description: "The trading date."
+        tests:
+          - not_null
+      - name: close_price
+        description: "Closing price."
+        tests:
+          - not_null
+
+    tests:
+      - unique:
+          column_name: "(symbol || '-' || trading_date)" # Composite Key Check
+      - dbt_utils.expression_is_true:
+          expression: "close_price > 0" # Price must be positive

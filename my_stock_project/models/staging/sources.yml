@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw_data
+    schema: raw 
+    description: "Raw stock data fetched from Yahoo Finance"
+    tables:
+      - name: amzn_stock_prices
+      - name: asml_stock_prices
+      - name: avgo_stock_prices
+      - name: googl_stock_prices
+      - name: meta_stock_prices
+      - name: msft_stock_prices
+      - name: nbis_stock_prices
+      - name: nvda_stock_prices
+      - name: pltr_stock_prices
+      - name: tsla_stock_prices

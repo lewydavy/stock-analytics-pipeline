@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_stock
+    description: "Dimension table for stock metadata"
+    columns:
+      - name: symbol
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+          - unique
+      - name: company
+        description: "Company name"
