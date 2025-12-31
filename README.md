@@ -2,18 +2,18 @@
 
 A data pipeline that extracts stock market data, transforms it using modern analytics engineering practices, and visualizes "Alpha" (excess returns) against sector peers.
 
-## 🏗️ Architecture
+## Full Pipeline
 
 **Yahoo Finance API** (Extract) → **Python** (Load) → **Postgres** (Storage) → **dbt** (Transform) → **Dagster** (Orchestrate) → **Streamlit** (Visualize)
 
-## 🚀 Key Features
+## Notes
 
 *   **Self-Healing Pipeline:** Orchestrated via **Dagster**, ensuring Python extraction scripts run successfully before dbt transformations begin.
-*   **Modern Data Stack:** Utilizes **dbt Core** for modular SQL modeling (Staging → Intermediate → Marts).
-*   **Dynamic Extraction:** Python script fetches 5 years of historical data for dynamic ticker lists and handles schema changes (Drop/Cascade) automatically.
-*   **Analytics:** Calculates complex metrics like **Moving Averages**, **Volatility**, and **Cumulative Alpha** to identify stocks outperforming their sector.
+*   **Data Stack:** Utilizes **dbt Core** for modular SQL modeling.
+*   **Extraction:** Python script fetches 5 years of historical data for dynamic ticker lists and handles schema changes automatically.
+*   **Analytics:** Calculates metrics like **Moving Averages**, **Volatility**, and **Cumulative Alpha** to identify stocks outperforming their sector.
 
-## 🛠️ Tech
+## Tech
 
 *   **Language:** Python 3.12, SQL
 *   **Orchestration:** Dagster
@@ -22,7 +22,7 @@ A data pipeline that extracts stock market data, transforms it using modern anal
 *   **Visualization:** Streamlit, Plotly
 *   **Libraries:** yfinance, pandas, sqlalchemy
 
-## 📊 Visuals
+## Visuals
 
 ### 1. Orchestration Lineage
 *Demonstrates the dependency graph between the raw Python ingestion layer and the dbt transformation layer.*
@@ -32,7 +32,7 @@ A data pipeline that extracts stock market data, transforms it using modern anal
 ### 2. Analytics Dashboard
 *Interactive Streamlit dashboard visualizing 5 years of stock performance.*
 
-**A. Cumulative Alpha (The "King of Tech")**
+**A. Cumulative Alpha**
 *Tracks how much a stock is outperforming (or underperforming) the sector average over time. A rising line indicates the stock is generating "Alpha".*
 ![Cumulative Alpha Chart](dashboard_1.png)
 
@@ -41,7 +41,7 @@ A data pipeline that extracts stock market data, transforms it using modern anal
 ![Deep Dive Chart](dashboard_2.png)
 
 **C. Risk Analysis**
-*Monthly volatility breakdown (Standard Deviation) to assess which stocks carried the most risk during specific periods.*
+*Monthly volatility breakdown to assess which stocks carried the most risk during specific periods.*
 ![Volatility Chart](dashboard_3.png)
 
 ## ⚙️ How to Run
